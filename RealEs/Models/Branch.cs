@@ -7,14 +7,15 @@ using System.Web;
 
 namespace RealEs.Models
 {
-    [Table("Branch_tbl")]
+   [Table("Branch_tbl")]
     public class Branch
     {
         [Key]
         public String BranchNo { get; set; }
         public String Street { get; set; }
         public String City { get; set; }
-        public int Postcode { get; set; }
+        public String Postcode { get; set; }
         public List<Staff> staffs { get; set; }
+        public List<Rent> Rents { get; set; }
     }
 }

@@ -1,9 +1,9 @@
-﻿namespace RealEs.Migrations
+namespace RealEs.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CFmigration : DbMigration
+    public partial class mynew1 : DbMigration
     {
         public override void Up()
         {
@@ -14,7 +14,7 @@
                         BranchNo = c.String(nullable: false, maxLength: 128),
                         Street = c.String(),
                         City = c.String(),
-                        Postcode = c.Int(nullable: false),
+                        Postcode = c.String(),
                     })
                 .PrimaryKey(t => t.BranchNo);
             
@@ -54,11 +54,11 @@
                         Street = c.String(),
                         City = c.String(),
                         Ptype = c.String(),
-                        Rooms = c.String(),
+                        Rooms = c.Int(nullable: false),
                         OwnerNoRef = c.String(maxLength: 128),
                         StaffNoRef = c.String(maxLength: 128),
                         BranchNoRef = c.String(maxLength: 128),
-                        Rents = c.String(),
+                        Rents = c.Int(nullable: false),
                     })
                 .PrimaryKey(t => t.PropertyNo)
                 .ForeignKey("dbo.Branches", t => t.BranchNoRef)

@@ -7,6 +7,7 @@ using System.Web;
 
 namespace RealEs.Models
 {
+    
     [Table("Rent_tbl")]
     public class Rent
     {
@@ -15,7 +16,7 @@ namespace RealEs.Models
         public String Street { get; set; }
         public String City { get; set; }
         public String Ptype { get; set; }
-        public String Rooms { get; set; }
+        public int Rooms { get; set; }
         [Column("OwnerNoRef")]
         public String RefOwnerNo { get; set; }
         [ForeignKey("RefOwnerNo")]
@@ -28,7 +29,7 @@ namespace RealEs.Models
         public String RefBranchNo { get; set; }
         [ForeignKey("RefBranchNo")]
         public Branch Branches { get; set; }
-        public String Rents { get; set; }
+        public int Rents { get; set; }
 
     }
 }
